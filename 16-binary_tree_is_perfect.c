@@ -42,6 +42,7 @@ int find_left(const binary_tree_t *tree)
  * isPerfect - function that check if is perfect
  * @tree: pointer to the node of checked is perfect
  * @find: expected depth from the left most leaf
+ * @cnt: representing the current level of the tree.
  * Return: 1 is perfect, 0 is not perfect
  */
 
@@ -52,7 +53,7 @@ bool isPerfect(const binary_tree_t *tree, int find, int cnt)
 
 	if (tree == NULL)
 	{
-		return (true);
+		return (0);
 	}
 	if (tree->left == NULL && tree->right == NULL)
 	{
