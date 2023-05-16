@@ -11,7 +11,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	int findLeft;
 	int correct;
 
-	findLeft = find_Left(tree);
+	findLeft = find_left(tree);
 	correct = isPerfect(tree, findLeft);
 	return (correct);
 }
@@ -41,8 +41,8 @@ int isPerfect(const binary_tree_t *tree, int find)
 {
 	int leftLeaf = 0;
 	int rightLeaf = 0;
-	const int tmp;
-	const int com;
+	int tmp;
+	int com;
 
 	if (!tree)
 	{
