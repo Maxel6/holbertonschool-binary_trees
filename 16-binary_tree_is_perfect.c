@@ -24,10 +24,18 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 int find_left(const binary_tree_t *tree)
 {
+	int leftDepth;
+	int rightDepth;
+
 	if (!tree)
 		return (0);
+	leftDepth = find_left(tree->left);
+	rightDepth = find_left(tree->right);
+
+	if (leftDepth > rightDepth)
+		return (leftDepth + 1);
 	else
-		return (1 + find_left(tree->left));
+		return (rightDepth + 1);
 }
 
 /**
@@ -41,20 +49,20 @@ int isPerfect(const binary_tree_t *tree, int find)
 {
 	int leftLeaf = 0;
 	int rightLeaf = 0;
-	int tmp;
-	int com;
 
 	if (!tree)
 	{
-		tmp = (0 == find);
-		return (tmp);
+		return (find == 0);
 	}
-	if (!tree->left != !tree->right)
+	if (!tree->left && !tree->right)
 	{
-		return (0);
+		return (find == 1);
 	}
+	if ((!tree->left && tree->right) || (tree->left && !tree->right))
+		return (0);
+
 	leftLeaf = isPerfect(tree->left, find) - 1;
 	rightLeaf = isPerfect(tree->right, find) - 1;
-	com = (find >= 0);
-	return (com && leftLeaf && rightLeaf);
+
+	return (leftLeaf && rightLeaf);
 }
