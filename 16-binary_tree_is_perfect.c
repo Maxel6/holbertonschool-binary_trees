@@ -12,7 +12,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	int correct;
 
 	findLeft = find_left(tree);
-	correct = isPerfect(tree, findLeft);
+	correct = isPerfect(tree, findLeft, 0);
 	return (correct);
 }
 
@@ -45,24 +45,24 @@ int find_left(const binary_tree_t *tree)
  * Return: 1 is perfect, 0 is not perfect
  */
 
-int isPerfect(const binary_tree_t *tree, int find)
+bool isPerfect(const binary_tree_t *tree, int find, int cnt)
 {
 	int leftLeaf = 0;
 	int rightLeaf = 0;
 
-	if (!tree)
+	if (tree == NULL)
 	{
-		return (find == 0);
+		return (true);
 	}
-	if (!tree->left && !tree->right)
+	if (tree->left == NULL && tree->right == NULL)
 	{
-		return (find == 1);
+		return (find == cnt + 1);
 	}
-	if ((!tree->left && tree->right) || (tree->left && !tree->right))
-		return (0);
+	if (tree->left == NULL || tree->right == NULL)
+		return (false);
 
-	leftLeaf = isPerfect(tree->left, find) - 1;
-	rightLeaf = isPerfect(tree->right, find) - 1;
+	leftLeaf = isPerfect(tree->left, find, cnt + 1);
+	rightLeaf = isPerfect(tree->right, find, cnt + 1);
 
 	return (leftLeaf && rightLeaf);
 }
