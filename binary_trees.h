@@ -48,5 +48,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 int find_left(const binary_tree_t *tree);
 bool isPerfect(const binary_tree_t *tree, int find, int cnt);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
+binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 #endif
