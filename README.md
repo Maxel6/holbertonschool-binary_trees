@@ -59,3 +59,8 @@ To match the examples in the tasks, you are given [this function](https://github
 | [16. Is perfect](https://github.com/Maxel6/holbertonschool-binary_trees/blob/main/16-binary_tree_is_perfect.c)  |  function that checks if a binary tree is perfect  |
 | [17. Sibling](https://github.com/Maxel6/holbertonschool-binary_trees/blob/main/17-binary_tree_sibling.c)  |  function that finds the sibling of a node  |
 | [18. Uncle](https://github.com/Maxel6/holbertonschool-binary_trees/blob/main/18-binary_tree_uncle.c)  |  function that finds the uncle of a node  |
+<br/>
+# autor :
+[Axel Malka](https://github.com/Maxel6)<br/>
+[Samir Zidani](https://github.com/samdaphbynet)<br/>
+[Natnael Deboch](https://github.com/Natnael04)
